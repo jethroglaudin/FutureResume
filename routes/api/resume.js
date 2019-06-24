@@ -78,7 +78,7 @@ router.post(
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json(errors.array());
+      return res.status(400).json(errors);
     }
     const newResume = new Resume({
       firstName: req.body.firstName,
